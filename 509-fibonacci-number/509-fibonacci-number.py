@@ -1,8 +1,12 @@
 class Solution:
-    def fib(self, n: int) -> int:
+    def Recur(self, n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        return self.Recur(n-1) + self.Recur(n-2)
         
-        fibolist = [0, 1]
-        while len(fibolist) <= n:
-            fibolist.append(fibolist[-1] + fibolist[-2])
-            
-        return fibolist[n]
+    def fib(self, n: int) -> int:
+        answer = self.Recur(n)
+        return answer
+        
